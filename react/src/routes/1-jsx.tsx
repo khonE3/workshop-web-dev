@@ -52,7 +52,7 @@ export function UserSettings(props: UserSettingsProps) {
       <input className="border rounded ml-1 px-2 py-1" type="text" id="name" value="john123"/>
 
       {/* 8. `style=""` จะต้องกำหนดเป็นรูปแบบ Object และตามด้วย Property camelCase */}
-      <button type="button" style={{ display: 'block', backgroundColor: 'gray', color: 'white', padding: '0.5em 1em', marginTop: '0.5em'}}>Update</button>
+      <button type="button" style={{ display: 'inline', backgroundColor: 'blue', padding: '0.5em 1em', marginTop: '0.5em', borderRadius: '50px'}} className='text-white'>Update</button>
     </>
   )
 }
@@ -72,5 +72,7 @@ function MyFooter() {
     <footer className={footerClass}>
       <p className="font-bold">&copy; {copyrightYear + 543} {websiteName.toUpperCase()}</p>
     </footer>
+    // ถ้าเราไม่ใช้วงเล็บปีกกา {} จะทำให้ React มองว่าเป็น String ธรรมดา และไม่สามารถประมวลผล JavaScript Expressions ได้
+    // ถ้าจะใส่เลขหรือตัวแปรที่ไม่ใช่ String ต้องใช้วงเล็บปีกกา {} เพื่อบอกให้ React ประมวลผลเป็น JavaScript Expression ตัวอย่างเช่น min={0} max={100} value={50} หรือ className={darkTheme ? 'dark' : 'light'}
   )
 }
